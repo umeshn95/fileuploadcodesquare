@@ -1,19 +1,20 @@
 'use strict';
 const multer = require('multer');
+const path = require('path')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         if(file.originalname.includes('catalog')){
-            cb(null, 'catalog');
+            cb(null, path.join(__dirname + '/../catalog'));
         }
         else if(file.originalname.includes('pricebook')){
-            cb(null, 'pricebook');
+            cb(null, path.join(__dirname + '/../pricebook'));
         }
         else if(file.originalname.includes('inventory')){
-            cb(null, 'inventory');
+            cb(null, path.join(__dirname + '/../inventory'));
         }
         else if(file.originalname.includes('image')){
-            cb(null, 'image');
+            cb(null, path.join(__dirname + '/../image'));
         }
     },
     filename: (req, file, cb) => {
