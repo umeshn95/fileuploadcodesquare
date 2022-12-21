@@ -68,7 +68,7 @@ const getallSingleFiles = async (req, res, next) => {
         return;
       }
       filenames.forEach(function(filename,index,i) {
-        fs.readFile(currDir + '\\'+`${filename}`, 'utf-8', function(err, content) {
+        fs.readFile(currDir + '/'+`${filename}`, 'utf-8', function(err, content) {
           if (err) {
             console.log(err)
             onError(err);
@@ -144,11 +144,6 @@ const getallMultipleFiles = async (req, res, next) => {
       });
     });
 
-
-
-
-
-        
     }catch(error) {
         res.status(400).send(error.message);
     }
@@ -157,7 +152,7 @@ const getallMultipleFiles = async (req, res, next) => {
 
 const deleteFile = async(req,res,next)=>{
 
-    res.status(200).send({sucess:true,message:"deleted"})
+res.status(200).send({sucess:true,message:"deleted"})
 }
 
 
