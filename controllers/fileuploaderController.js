@@ -156,7 +156,7 @@ const getallMultipleFiles = async (req, res, next) => {
 
 
 const deleteFile = async(req,res,next)=>{
-    await MultipleFile.deleteMany();
+
     res.status(200).send({sucess:true,message:"deleted"})
 }
 
