@@ -9,7 +9,6 @@ const port = process.env.PORT || 8080;
 const app = express();
 app.use(cors());
 
-require('./database')();
 
 app.use(bodyParser.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
