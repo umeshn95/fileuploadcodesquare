@@ -16,6 +16,7 @@ const storage = multer.diskStorage({
         else if(file.originalname.includes('image')){
             cb(null, path.join(__dirname + '/../image'));
         }
+        
     },
     filename: (req, file, cb) => {
         console.log(file);

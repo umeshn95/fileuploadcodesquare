@@ -25,6 +25,9 @@ const getallSingleFiles = async (req, res, next) => {
         const fileTypes = req.body.filedescription;
         // const files = await SingleFile.find();
         let currDir
+        if(!fileTypes){
+          currDir = path.join(__dirname + '/../catalog');
+        }
       if(fileTypes=="catalog"){
         currDir = path.join(__dirname + '/../catalog');
       }
