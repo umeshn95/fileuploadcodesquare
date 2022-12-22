@@ -5,7 +5,7 @@ const path = require('path')
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         if(file.originalname.includes('catalog')){
-            cb(null,'catalog');
+            cb(null, path.join(__dirname +''));
         }
         else if(file.originalname.includes('pricebook')){
             cb(null, path.join(__dirname + '/../pricebook'));

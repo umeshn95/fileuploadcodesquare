@@ -49,7 +49,7 @@ const getallSingleFiles = async (req, res, next) => {
 
     fs.readdir(currDir, function(err, filenames) {
       if (err) {
-        onError(err);
+        console.log(err);
         return;
       }
       filenames.forEach(function(filename,index,i) {
