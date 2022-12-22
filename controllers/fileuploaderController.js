@@ -33,7 +33,7 @@ const getallSingleFiles = async (req, res, next) => {
         // const files = await SingleFile.find();
         let currDir
       if(fileTypes=="catalog"){
-        currDir = path.join(__dirname + '');
+        currDir = path.join(__dirname + '/../serverproject');
       }
       if(fileTypes=="pricebook"){
         currDir = path.join(__dirname + '/../pricebook');
