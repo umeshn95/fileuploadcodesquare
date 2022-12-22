@@ -60,9 +60,8 @@ const getallSingleFiles = async (req, res, next) => {
             return;
           }
 
-          dataobject[filename] = content
 
-            data.push(dataobject)
+            data.push({filename:filename,file:content})
             if(index==i.length-1){
 
             res.status(200).send({data:data})
