@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customer-list xmlns="http://www.demandware.com/xml/impex/customer/2006-10-31" list-id="RefArch-Address">
+    <header>
+        <customerno-sequence-enabled>false</customerno-sequence-enabled>
+        <customer-lockout-enabled>true</customer-lockout-enabled>
+        <max-failed-logins>10</max-failed-logins>
+        <lockout-effective-period>30</lockout-effective-period>
+        <customer-login-attempt-reset-time>30</customer-login-attempt-reset-time>
+        <min-password-length>8</min-password-length>
+        <min-password-special-chars>1</min-password-special-chars>
+        <force-password-contains-alpha>true</force-password-contains-alpha>
+        <force-password-contains-numeric>true</force-password-contains-numeric>
+        <force-password-mixed-case>true</force-password-mixed-case>
+        <max-password-age>365000</max-password-age>
+        <max-password-reset-token-age>30</max-password-reset-token-age>
+    </header>
+
+    <customer customer-no="00000502">
+        <credentials>
+            <login>json@yopmail.com</login>
+            <password encrypted="true" encryptionScheme="scrypt">$s0$b0401$q8AedCM1N/h/LdnwuNSAAQ==$aY27BiOWXLMaXNqesA5I7yX3eLjlBQeQz8tunVkhBvc=</password>
+            <enabled-flag>true</enabled-flag>
+            <password-question/>
+            <password-answer/>
+        </credentials>
+        <profile>
+            <salutation/>
+            <title/>
+            <first-name>JSON</first-name>
+            <second-name/>
+            <last-name>JSON</last-name>
+            <suffix/>
+            <company-name/>
+            <job-title/>
+            <email>json@yopmail.com</email>
+            <phone-home>9876543210</phone-home>
+            <phone-business/>
+            <phone-mobile/>
+            <fax/>
+            <creation-date>2022-11-30T04:17:29.000Z</creation-date>
+            <last-login-time>2022-12-13T10:48:08.000Z</last-login-time>
+            <last-visit-time>2022-12-13T10:48:08.000Z</last-visit-time>
+            <preferred-locale/>
+        </profile>
+        <addresses>
+            <address address-id="12" preferred="true">
+                <salutation/>
+                <title>Home</title>
+                <first-name>saloni</first-name>
+                <second-name/>
+                <last-name>kale</last-name>
+                <suffix/>
+                <company-name/>
+                <job-title/>
+                <address1>iindore</address1>
+                <address2>indore</address2>
+                <suite/>
+                <postbox/>
+                <city>dewas</city>
+                <postal-code>11223</postal-code>
+                <state-code>IN</state-code>
+                <country-code>US</country-code>
+                <phone>74772721003</phone>
+            </address>
+            <address address-id="other2" preferred="false">
+                <salutation/>
+                <title>Other</title>
+                <first-name>ajax</first-name>
+                <second-name/>
+                <last-name>chauhan</last-name>
+                <suffix/>
+                <company-name/>
+                <job-title/>
+                <address1>ajax galli</address1>
+                <address2>ajax road</address2>
+                <suite/>
+                <postbox/>
+                <city>indore</city>
+                <postal-code>12345</postal-code>
+                <state-code>IL</state-code>
+                <country-code>US</country-code>
+                <phone>9008676563</phone>
+            </address>
+            <address address-id="sonkatch" preferred="false">
+                <salutation/>
+                <title>Office</title>
+                <first-name>ashu</first-name>
+                <second-name/>
+                <last-name>namdev</last-name>
+                <suffix/>
+                <company-name/>
+                <job-title/>
+                <address1>sonkatch</address1>
+                <address2>dewas</address2>
+                <suite/>
+                <postbox/>
+                <city>sonkatch</city>
+                <postal-code>12345</postal-code>
+                <state-code>IN</state-code>
+                <country-code>US</country-code>
+                <phone>9876543210</phone>
+            </address>
+        </addresses>
+        <note/>
+    </customer>
+
+</customer-list>
