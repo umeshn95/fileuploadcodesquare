@@ -22,8 +22,8 @@ const multipleFileUpload = async (req, res, next) => {
 
 const getallSingleFiles = async (req, res, next) => {
     try{
-        const fileTypes = req.params.filedescription;
-        // const files = await SingleFile.find();
+        const fileTypes = req.query.filedescription;
+        // const fileTypes = await SingleFile.find();
         let currDir
         if(!fileTypes){
           currDir = path.join(__dirname + '/../catalog');
