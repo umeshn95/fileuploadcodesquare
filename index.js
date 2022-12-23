@@ -9,7 +9,7 @@ const port = process.env.PORT || 8080;
 const app = express();
 app.use(cors());
 
-
+const name = "var"
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'catalog')));
 console.log(path.join(__dirname));
