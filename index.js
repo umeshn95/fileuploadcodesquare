@@ -11,6 +11,7 @@ app.use(cors());
 
 const name = "var"
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'catalog')));
 console.log(path.join(__dirname));
 app.use('/api', fileRoutes.routes);

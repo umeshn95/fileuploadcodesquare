@@ -6,6 +6,7 @@ var parseString = require('xml2js').parseString;
 const path = require('path')
 
 const singleFileUpload = async (req, res, next) => {
+  console.log(req.file)
     try{
        res.status(201).send('File Uploaded Successfully');
     }catch(error) {
@@ -14,6 +15,7 @@ const singleFileUpload = async (req, res, next) => {
 }
 const multipleFileUpload = async (req, res, next) => {
     try{
+      console.log(req.files)
         res.status(201).send('Files Uploaded Successfully');
     }catch(error) {
         res.status(400).send(error.message);
@@ -31,15 +33,15 @@ const getallSingleFiles = async (req, res, next) => {
       if(fileTypes=="catalog"){
         currDir = path.join(__dirname + '/../catalog');
       }
-      if(fileTypes=="pricebook"){
-        currDir = path.join(__dirname + '/../pricebook');
-      }
-      if(fileTypes=="inventory"){
-        currDir = path.join(__dirname + '/../inventory');
-      }
-      if(fileTypes=="image"){
-        return res.status(200).send(files)
-      }
+      // if(fileTypes=="pricebook"){
+      //   currDir = path.join(__dirname + '/../pricebook');
+      // }
+      // if(fileTypes=="inventory"){
+      //   currDir = path.join(__dirname + '/../inventory');
+      // }
+      // if(fileTypes=="image"){
+      //   return res.status(200).send(files)
+      // }
         let data = [];
         let dataobject = {};
 
@@ -55,6 +57,7 @@ const getallSingleFiles = async (req, res, next) => {
             onError(err);
             return;
           }
+
 
 
             data.push({filename:filename,file:content})
@@ -79,20 +82,20 @@ const getallSingleFiles = async (req, res, next) => {
 
 const getallMultipleFiles = async (req, res, next) => {
     try{
-        const fileTypes = req.body.filedescription;
+        // const fileTypes = req.query.filedescription;
         let currDir
-      if(fileTypes=="catalog"){
+      // if(fileTypes=="catalog"){
         currDir = path.join(__dirname + '/../catalog');
-      }
-      if(fileTypes=="pricebook"){
-        currDir = path.join(__dirname + '/../pricebook');
-      }
-      if(fileTypes=="inventory"){
-        currDir = path.join(__dirname + '/../inventory');
-      }
-      if(fileTypes=="image"){
-        return res.status(200).send(files)
-      }
+      // }
+      // if(fileTypes=="pricebook"){
+        // currDir = path.join(__dirname + '/../pricebook');
+      // }
+      // if(fileTypes=="inventory"){
+      //   currDir = path.join(__dirname + '/../inventory');
+      // }
+      // if(fileTypes=="image"){
+      //   return res.status(200).send(files)
+      // }
         let data = [];
         let dataobject = {};
 
