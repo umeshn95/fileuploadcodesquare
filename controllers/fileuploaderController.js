@@ -47,18 +47,20 @@ const getallSingleFiles = async (req, res, next) => {
 
     fs.readdir(currDir, function(err, filenames) {
       if (err) {
-        console.log(err);
+        res.status(400).send(err);
         return;
       }
       filenames.forEach(function(filename,index,i) {
         fs.readFile(currDir + '/'+`${filename}`, 'utf-8', function(err, content) {
           if (err) {
-            console.log(err)
-            onError(err);
+            res.status(400).send(err);
+
             return;
           }
 
-
+          if(!content){
+            res.status(200).send({data:"data"})
+          }
 
             data.push({filename:filename,file:content})
             if(index==i.length-1){
