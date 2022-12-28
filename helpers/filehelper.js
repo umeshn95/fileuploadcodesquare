@@ -6,7 +6,7 @@ const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         // console.log(file.originalname)
         // if(file.originalname.includes('catalog')){
-            cb(null, path.join(__dirname +'/../catalog'));
+            
         // }
         // else if(file.originalname.includes('pricebook')){
             // cb(null, path.join(__dirname + '/../pricebook'));
@@ -14,15 +14,19 @@ const storage = multer.diskStorage({
         // else if(file.originalname.includes('inventory')){
             // cb(null, path.join(__dirname + '/../inventory'));
         // }
-        // else if(file.originalname.includes('image')){
-            // cb(null, path.join(__dirname + '/../image'));
-        // }
+        if(file.originalname.includes('image')){
+            cb(null, path.join(__dirname + '/../image'));
+        }
+        else{
+            cb(null, path.join(__dirname +'/../catalog'));
+        }
         // else{
             // console.log("error")
         // }
     },
     filename: (req, file, cb) => {
-        cb(null, new Date().toISOString().replace(/:/g, '-') + '-' + file.originalname);
+        // new Date().toISOString().replace(/:/g, '-') + '-' +
+        cb(null,file.originalname);
     }
 });
 const filefilter = (req, file, cb) => {

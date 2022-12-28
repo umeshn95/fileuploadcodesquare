@@ -9,11 +9,10 @@ const port = process.env.PORT || 8080;
 const app = express();
 app.use(cors());
 
-const name = "var"
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'catalog')));
-console.log(path.join(__dirname));
+// console.log(path.join(__dirname));
 app.use('/api', fileRoutes.routes);
 
 app.listen(port, () => console.log(`server is listening on url http://localhost:${port}`));
