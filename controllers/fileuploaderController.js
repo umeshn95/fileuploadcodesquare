@@ -131,6 +131,16 @@ const getallMultipleFiles = async (req, res, next) => {
 
 
 const deleteFile = async(req,res,next)=>{
+  let currDir
+  currDir = path.join(__dirname + '/../catalog');
+  fs.readdir(currDir, (err, files) => {
+    if (err) throw err;
+    for (const file of files) {
+      fs.unlink(path.join(currDir, file), (err) => {
+        if (err) throw err;
+      });
+    }
+  });
 
 res.status(200).send({sucess:true,message:"deleted"})
 }
