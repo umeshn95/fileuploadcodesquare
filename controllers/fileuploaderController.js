@@ -50,6 +50,9 @@ const getallSingleFiles = async (req, res, next) => {
         res.status(400).send(err);
         return;
       }
+      if(!filenames.length){
+        return res.status(200).send("no file found")
+      }
       filenames.forEach(function(filename,index,i) {
         fs.readFile(currDir + '/'+`${filename}`, 'utf-8', function(err, content) {
           if (err) {
@@ -59,7 +62,7 @@ const getallSingleFiles = async (req, res, next) => {
           }
 
           if(!content){
-            res.status(200).send({data:"data"})
+           return res.status(200).send({data:"data"})
           }
 
             data.push({filename:filename,file:content})
