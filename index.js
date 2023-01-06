@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'catalog')));
 // console.log(path.join(__dirname));
+// new
 app.use('/api', fileRoutes.routes);
 
 app.listen(port, () => console.log(`server is listening on url http://localhost:${port}`));
